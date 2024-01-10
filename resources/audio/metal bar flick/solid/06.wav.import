@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cm0wtq634x7sj"
+path="res://.godot/imported/06.wav-c1dd5686fa13f87eb31bc1884a1c26e9.sample"
+
+[deps]
+
+source_file="res://resources/audio/metal bar flick/solid/06.wav"
+dest_files=["res://.godot/imported/06.wav-c1dd5686fa13f87eb31bc1884a1c26e9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bc4mxioodhp4y"
+path="res://.godot/imported/06.wav-f1e3448d852b9d8373609f6364f02faa.sample"
+
+[deps]
+
+source_file="res://resources/audio/drum-like/metal bin/on metal/low pitch/06.wav"
+dest_files=["res://.godot/imported/06.wav-f1e3448d852b9d8373609f6364f02faa.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

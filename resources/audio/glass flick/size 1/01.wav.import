@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cal0wobwk1r23"
+path="res://.godot/imported/01.wav-cf83ad5967d6f2649d80b5d8d0701b46.sample"
+
+[deps]
+
+source_file="res://resources/audio/glass flick/size 1/01.wav"
+dest_files=["res://.godot/imported/01.wav-cf83ad5967d6f2649d80b5d8d0701b46.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

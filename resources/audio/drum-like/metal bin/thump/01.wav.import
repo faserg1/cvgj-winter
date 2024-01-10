@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ctune60j0a4lx"
+path="res://.godot/imported/01.wav-b88a38bf82b79ea899e1dce5541a9472.sample"
+
+[deps]
+
+source_file="res://resources/audio/drum-like/metal bin/thump/01.wav"
+dest_files=["res://.godot/imported/01.wav-b88a38bf82b79ea899e1dce5541a9472.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

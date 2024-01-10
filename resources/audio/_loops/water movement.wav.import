@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bc5sg3deyrqjk"
+path="res://.godot/imported/water movement.wav-44fe1fc8ff4aff8f5563b49501fe9b47.sample"
+
+[deps]
+
+source_file="res://resources/audio/_loops/water movement.wav"
+dest_files=["res://.godot/imported/water movement.wav-44fe1fc8ff4aff8f5563b49501fe9b47.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

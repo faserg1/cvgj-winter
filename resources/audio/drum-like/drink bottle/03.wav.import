@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dbxddxlnr0t13"
+path="res://.godot/imported/03.wav-908e84460c0960595f7271c1d32dfd47.sample"
+
+[deps]
+
+source_file="res://resources/audio/drum-like/drink bottle/03.wav"
+dest_files=["res://.godot/imported/03.wav-908e84460c0960595f7271c1d32dfd47.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

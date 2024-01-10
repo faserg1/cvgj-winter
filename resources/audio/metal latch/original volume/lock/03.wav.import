@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b2hyp7ecmeqvg"
+path="res://.godot/imported/03.wav-fb6fd81803904aab4aa3efe3753762a9.sample"
+
+[deps]
+
+source_file="res://resources/audio/metal latch/original volume/lock/03.wav"
+dest_files=["res://.godot/imported/03.wav-fb6fd81803904aab4aa3efe3753762a9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cld6s6m0vqcr0"
+path="res://.godot/imported/05.wav-296852296c99df4415e00425092d54e6.sample"
+
+[deps]
+
+source_file="res://resources/audio/cardboard package/on cardboard package/05.wav"
+dest_files=["res://.godot/imported/05.wav-296852296c99df4415e00425092d54e6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

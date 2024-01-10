@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bo0to77lhbc0d"
+path="res://.godot/imported/03.wav-1ce119185bde12f52f6be410d7dece36.sample"
+
+[deps]
+
+source_file="res://resources/audio/servo motor/fast/03.wav"
+dest_files=["res://.godot/imported/03.wav-1ce119185bde12f52f6be410d7dece36.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b8x6drh8bfubq"
+path="res://.godot/imported/02.wav-fa04f25696d81676a32a442ef7228f94.sample"
+
+[deps]
+
+source_file="res://resources/audio/brick on brick/02.wav"
+dest_files=["res://.godot/imported/02.wav-fa04f25696d81676a32a442ef7228f94.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

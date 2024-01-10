@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bjryq6j3jv0fg"
+path="res://.godot/imported/03.wav-361fb535e49ebddc614f5cb2a7074178.sample"
+
+[deps]
+
+source_file="res://resources/audio/metal knife/flick/03.wav"
+dest_files=["res://.godot/imported/03.wav-361fb535e49ebddc614f5cb2a7074178.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

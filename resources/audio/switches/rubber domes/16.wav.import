@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cpvhwd6dc2u1"
+path="res://.godot/imported/16.wav-e97160743963abb9c3ca1d3c2627ff77.sample"
+
+[deps]
+
+source_file="res://resources/audio/switches/rubber domes/16.wav"
+dest_files=["res://.godot/imported/16.wav-e97160743963abb9c3ca1d3c2627ff77.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

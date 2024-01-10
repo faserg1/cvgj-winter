@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cmp5udxlbu38a"
+path="res://.godot/imported/06.wav-f3e886487f05c33b3d3c302ef2483561.sample"
+
+[deps]
+
+source_file="res://resources/audio/crinkly plastic/06.wav"
+dest_files=["res://.godot/imported/06.wav-f3e886487f05c33b3d3c302ef2483561.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cax5lp37bgdsj"
+path="res://.godot/imported/08.wav-782b4215dc429c6e5bd7aa4ef226b616.sample"
+
+[deps]
+
+source_file="res://resources/audio/fork tines strum/08.wav"
+dest_files=["res://.godot/imported/08.wav-782b4215dc429c6e5bd7aa4ef226b616.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

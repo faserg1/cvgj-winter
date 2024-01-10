@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://l042c21e440b"
+path="res://.godot/imported/03.wav-926616b47a574d3406af0c4f21ffa156.sample"
+
+[deps]
+
+source_file="res://resources/audio/water/in bottle/slosh/down/03.wav"
+dest_files=["res://.godot/imported/03.wav-926616b47a574d3406af0c4f21ffa156.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

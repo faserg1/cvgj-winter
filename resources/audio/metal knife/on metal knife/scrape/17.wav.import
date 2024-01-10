@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bey3n1gwotvpi"
+path="res://.godot/imported/17.wav-9677b92dc0aaaab143b2897ee49718f6.sample"
+
+[deps]
+
+source_file="res://resources/audio/metal knife/on metal knife/scrape/17.wav"
+dest_files=["res://.godot/imported/17.wav-9677b92dc0aaaab143b2897ee49718f6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cb70qd4driyq5"
+path="res://.godot/imported/03.wav-67337da4c7ec929c19c1fec5ea641246.sample"
+
+[deps]
+
+source_file="res://resources/audio/metal box hit/03.wav"
+dest_files=["res://.godot/imported/03.wav-67337da4c7ec929c19c1fec5ea641246.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://fd8pbskxyweq"
+path="res://.godot/imported/08.wav-d821352e0a2268341b4380c1d8fa0030.sample"
+
+[deps]
+
+source_file="res://resources/audio/tiny metal frame on glass/08.wav"
+dest_files=["res://.godot/imported/08.wav-d821352e0a2268341b4380c1d8fa0030.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

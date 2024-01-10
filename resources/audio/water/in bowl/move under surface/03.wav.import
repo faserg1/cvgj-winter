@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://qsg7r17p41m6"
+path="res://.godot/imported/03.wav-70e9e6778846d3202ed81fd0f2b54775.sample"
+
+[deps]
+
+source_file="res://resources/audio/water/in bowl/move under surface/03.wav"
+dest_files=["res://.godot/imported/03.wav-70e9e6778846d3202ed81fd0f2b54775.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

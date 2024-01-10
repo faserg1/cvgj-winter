@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ny17vee7jcfe"
+path="res://.godot/imported/01.wav-089b501d98ce73f2e6673356b18a72f8.sample"
+
+[deps]
+
+source_file="res://resources/audio/plastic thud/01.wav"
+dest_files=["res://.godot/imported/01.wav-089b501d98ce73f2e6673356b18a72f8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

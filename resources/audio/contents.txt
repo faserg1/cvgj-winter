@@ -1,0 +1,103 @@
+_loops                       (6)
+big plastic bin lid          (5)
+brick on brick              (14)
+cardboard package           (12)
+  on cardboard package
+  shake
+    crinkly inside          (12)
+    rattly inside
+      down                  (13)
+      up                    (10)
+cereal slide in box         (12)
+comb
+  up                        (13)
+  up-down                   (16)
+  straight                   (3)
+creaking
+  misc
+    short                   (10)
+    long                     (4)
+  open                      (12)
+  close                      (9)
+crinkly plastic             (17)
+drawers
+  open                       (3)
+  close                      (3)
+drum-like
+  drink bottle              (11)
+  metal bin
+    thump                    (4)
+    on metal
+      low pitch              (9)
+      high pitch            (12)
+    flick                    (8)
+fabric
+  hard
+    hit                      (9)
+    rub                      (4)
+  soft rub                   (4)
+fork tines strum            (10)
+glass bottles clink          (9)
+glass flick
+  size 1                    (12)
+  size 2
+    short                   (11)
+    long                    (16)
+  size 3
+    short                   (10)
+    long                    (14)
+jewellery slide              (6)
+metal bar flick
+  solid                     (19)
+  hollow                    (24)
+metal box hit                (8)
+metal knife
+  on metal knife
+    scrape                  (22)
+    hit
+      short clear           (18)
+      short dull            (13)
+      long clear            (12)
+  flick                     (12)
+metal latch
+  original volume
+    lock                     (8)
+    unlock                   (8)
+  distorted
+    lock                     (8)
+    unlock                   (8)
+plastic flick                (7)
+plastic thud                (10)
+plug and socket
+  plug in                    (4)
+  unplug                     (3)
+servo motor
+  slow long                  (9)
+  slow short                (14)
+  medium                     (9)
+  fast                      (12)
+sticks
+  in a glass                 (7)
+  scattered on a surface    (11)
+  one dropped
+    on tip                   (9)
+    on side                 (21)
+switches
+  slidy click                (6)
+  microswitches             (13)
+  rubber domes              (20)
+  rocker
+    on                       (4)
+    off                      (4)
+tiny metal frame on glass   (10)
+water
+  in bottle
+    slosh
+      down                   (5)
+      up                     (5)
+    shakes                   (7)
+  in bowl
+    plop                    (12)
+    move under surface      (21)
+
+--- TOTAL ---               705

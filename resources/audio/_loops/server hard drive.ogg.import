@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bioswd0lwgfqq"
+path="res://.godot/imported/server hard drive.ogg-891d2008c0d3660ec47d1fff5f1f680b.oggvorbisstr"
+
+[deps]
+
+source_file="res://resources/audio/_loops/server hard drive.ogg"
+dest_files=["res://.godot/imported/server hard drive.ogg-891d2008c0d3660ec47d1fff5f1f680b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

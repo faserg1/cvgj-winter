@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cgepq773gkrri"
+path="res://.godot/imported/11.wav-5a7697354670de50822a4d5c737a6012.sample"
+
+[deps]
+
+source_file="res://resources/audio/cereal slide in box/11.wav"
+dest_files=["res://.godot/imported/11.wav-5a7697354670de50822a4d5c737a6012.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

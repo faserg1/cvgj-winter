@@ -1,0 +1,16 @@
+Looping WAV version has Wavosaur custom loop start/end point metadata for seamless looping. Unity has undocumented support for this (just tell an audio source to loop). Once imported, Unity can use its own Vorbis compression.
+
+Looping OGG version has "LOOPSTART" and "LOOPLENGTH" metadata tags supported by RPG Maker VX Ace for seamless looping.
+
+If you're using the music in something that supports custom loop points but doesn't recognise the metadata, you can set up the loop points according to the info below (measured in samples at 44100 samples/second).
+
+                  |------------- OGG -------------|
+                  |---- WAV -----|                |
+                  |              |                |
+SONG            START           END             LENGTH
+--------------------------------------------------------
+01 - Ruins       1025370        10551159         9525789
+02 - Boss         137037         5154462         5017425
+03 - Ice Cave     703873        12347536        11643663
+04 - Pixels       794047         6438825         5644778
+

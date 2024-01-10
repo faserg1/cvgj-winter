@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://julvopu6l273"
+path="res://.godot/imported/21.wav-a894b45d4d8a7fe123c56dd37469941a.sample"
+
+[deps]
+
+source_file="res://resources/audio/sticks/one dropped/on side/21.wav"
+dest_files=["res://.godot/imported/21.wav-a894b45d4d8a7fe123c56dd37469941a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://5a0r5m4djq8t"
+path="res://.godot/imported/11.wav-f6b96f3c6579e01a3dd3287abfe184bb.sample"
+
+[deps]
+
+source_file="res://resources/audio/metal knife/on metal knife/hit/short dull/11.wav"
+dest_files=["res://.godot/imported/11.wav-f6b96f3c6579e01a3dd3287abfe184bb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
