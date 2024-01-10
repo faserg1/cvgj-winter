@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dexaxtihuby0r"
+path="res://.godot/imported/01 - Ruins (LOOP).wav-c9d1e5ab0dbd04b0d8ee03d8373a3f11.sample"
+
+[deps]
+
+source_file="res://resources/music/01 - Ruins (LOOP).wav"
+dest_files=["res://.godot/imported/01 - Ruins (LOOP).wav-c9d1e5ab0dbd04b0d8ee03d8373a3f11.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
