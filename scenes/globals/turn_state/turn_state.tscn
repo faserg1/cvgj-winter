@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtmcu2t5yud64"]
+
+[ext_resource type="Script" path="res://scenes/globals/turn_state/turn_state.gd" id="1_jr02v"]
+
+[node name="TurnState" type="Node"]
+script = ExtResource("1_jr02v")

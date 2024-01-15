@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://6cfa5rgkdgg8"]
+
+[ext_resource type="PackedScene" uid="uid://do1xi63yt30k2" path="res://scenes/hud/season/season.tscn" id="1_41oav"]
+
+[node name="MainHud" type="CanvasLayer"]
+
+[node name="Root" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Season" parent="Root" instance=ExtResource("1_41oav")]
+layout_mode = 1
+offset_left = 71.0
+offset_top = 72.0
+offset_right = 71.0
+offset_bottom = 72.0
+scale = Vector2(0.315, 0.315)

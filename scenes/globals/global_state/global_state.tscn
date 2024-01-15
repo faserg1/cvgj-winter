@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcst0mm6mjy84"]
+
+[ext_resource type="Script" path="res://scenes/globals/global_state/global_state.gd" id="1_g1246"]
+[ext_resource type="PackedScene" uid="uid://dtmcu2t5yud64" path="res://scenes/globals/turn_state/turn_state.tscn" id="2_amro2"]
+
+[node name="GlobalState" type="Node"]
+script = ExtResource("1_g1246")
+
+[node name="TurnState" parent="." instance=ExtResource("2_amro2")]

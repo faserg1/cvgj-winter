@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cgm1h8yewhbm1"
+path="res://.godot/imported/02 - Boss (LOOP).ogg-1ea9071177f5bf9216fea743275af8e8.oggvorbisstr"
+
+[deps]
+
+source_file="res://resources/music/02 - Boss (LOOP).ogg"
+dest_files=["res://.godot/imported/02 - Boss (LOOP).ogg-1ea9071177f5bf9216fea743275af8e8.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

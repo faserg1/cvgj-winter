@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="Cvgj-winter"
+run/main_scene="res://scenes/hud/main/main_hud.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GlobalState="*res://scenes/globals/global_state/global_state.tscn"
 
 [dotnet]
 
@@ -38,4 +43,32 @@ texture={
 "process/size_limit": 0,
 "roughness/mode": 0,
 "roughness/src_normal": ""
+}
+
+[input]
+
+forward={
+"deadzone": 0.5,
+"events": []
+}
+back={
+"deadzone": 0.5,
+"events": []
+}
+left={
+"deadzone": 0.5,
+"events": []
+}
+right={
+"deadzone": 0.5,
+"events": []
+}
+end_turn={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194309,"key_label":0,"unicode":0,"echo":false,"script":null)
+]
+}
+use={
+"deadzone": 0.5,
+"events": []
 }

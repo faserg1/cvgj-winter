@@ -4,9 +4,9 @@ Looping OGG version has "LOOPSTART" and "LOOPLENGTH" metadata tags supported by 
 
 If you're using the music in something that supports custom loop points but doesn't recognise the metadata, you can set up the loop points according to the info below (measured in samples at 44100 samples/second).
 
-                  |------------- OGG -------------|
-                  |---- WAV -----|                |
-                  |              |                |
+				  |------------- OGG -------------|
+				  |---- WAV -----|                |
+				  |              |                |
 SONG            START           END             LENGTH
 --------------------------------------------------------
 01 - Ruins       1025370        10551159         9525789

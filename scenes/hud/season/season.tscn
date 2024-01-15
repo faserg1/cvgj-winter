@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://do1xi63yt30k2"]
+
+[ext_resource type="Script" path="res://scenes/hud/season/circle.gd" id="1_b0sht"]
+[ext_resource type="Shader" uid="uid://bvu8h5v1ylrb" path="res://scenes/hud/season/turns_left.tres" id="2_61b8c"]
+
+[sub_resource type="Gradient" id="Gradient_a2jk0"]
+colors = PackedColorArray(0.890196, 0.921569, 0.0352941, 1, 0.890196, 0.392157, 0.0352941, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k507d"]
+shader = ExtResource("2_61b8c")
+
+[node name="Season" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Circle" type="Node2D" parent="."]
+script = ExtResource("1_b0sht")
+max_radius = 200.0
+min_radius = 50.0
+planet_radius = 20.0
+orbit_color = Color(0.25098, 0.227451, 0.639216, 1)
+sun_colors = SubResource("Gradient_a2jk0")
+planet_color = Color(0, 0.741176, 0, 1)
+
+[node name="TurnsLeft" type="Label" parent="Circle"]
+material = SubResource("ShaderMaterial_k507d")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.796078, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "16"
+horizontal_alignment = 1
+vertical_alignment = 1
