@@ -1,0 +1,91 @@
+[gd_scene load_steps=11 format=3 uid="uid://bwmid1r074xw"]
+
+[ext_resource type="Script" path="res://scenes/game/character/character.gd" id="1_664sg"]
+[ext_resource type="PackedScene" uid="uid://d0gcgmbi8abog" path="res://resources/models/LittleKnightCharacterPack/_Exports/SeperatedSword/Chr_Knight.tscn" id="1_d1sup"]
+[ext_resource type="AnimationLibrary" uid="uid://b0g6x2gpry03g" path="res://resources/models/LittleKnightCharacterPack/_Exports/SeperatedSword/Anim_Knight_AttackCombo01.fbx" id="2_3tqsq"]
+[ext_resource type="AnimationLibrary" uid="uid://dn1rqjs3tpdnp" path="res://resources/models/LittleKnightCharacterPack/_Exports/SeperatedSword/Anim_Knight_Death01.fbx" id="3_hycvt"]
+[ext_resource type="AnimationLibrary" uid="uid://d3ssbodstjmge" path="res://resources/models/LittleKnightCharacterPack/_Exports/SeperatedSword/Anim_Knight_Idle01.fbx" id="4_7yp7q"]
+[ext_resource type="AnimationLibrary" uid="uid://cbig813b4gfnj" path="res://resources/models/LittleKnightCharacterPack/_Exports/SeperatedSword/Anim_Knight_Jump01.fbx" id="5_tfa6h"]
+[ext_resource type="AnimationLibrary" uid="uid://cfwmeevngocax" path="res://resources/models/LittleKnightCharacterPack/_Exports/SeperatedSword/Anim_Knight_RunWithSword01.fbx" id="6_xwsbl"]
+[ext_resource type="AnimationLibrary" uid="uid://cl8fquqkngwph" path="res://resources/models/LittleKnightCharacterPack/_Exports/SeperatedSword/Anim_Knight_Wave01.fbx" id="7_4dmek"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_rn3dn"]
+custom_solver_bias = 0.225
+margin = 0.0
+radius = 0.72
+
+[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_ifo0t"]
+
+[node name="Character" type="CharacterBody3D"]
+script = ExtResource("1_664sg")
+
+[node name="Root Scene" parent="." instance=ExtResource("1_d1sup")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="Skeleton3D" parent="Root Scene/RootNode" index="0"]
+bones/1/position = Vector3(0.0127728, 0.389281, 0.0370517)
+bones/1/rotation = Quaternion(0.0116411, -0.0129505, 0.743592, 0.668406)
+bones/2/position = Vector3(0.0462513, 8.88178e-18, 8.88178e-18)
+bones/2/rotation = Quaternion(-0.163848, -0.0274395, 0.00370816, 0.986097)
+bones/4/position = Vector3(-0.0621538, 0.00426188, -0.000526601)
+bones/4/rotation = Quaternion(0.131159, -0.00915966, -0.498543, 0.856836)
+bones/5/position = Vector3(-0.14371, 0, 0)
+bones/5/rotation = Quaternion(-0.0758782, -2.48127e-17, -3.97275e-17, 0.997117)
+bones/6/position = Vector3(-0.047457, 7.10543e-17, 3.55271e-17)
+bones/6/rotation = Quaternion(-6.93889e-18, -6.93889e-18, 9.1073e-18, 1)
+bones/7/rotation = Quaternion(0.0670885, -0.0338663, -0.0221824, 0.996925)
+bones/14/position = Vector3(0.06149, -0.00323798, 0.000400088)
+bones/14/rotation = Quaternion(-0.0732308, 0.182828, -0.652219, 0.731998)
+bones/15/position = Vector3(0.14371, 7.10543e-17, 0)
+bones/15/rotation = Quaternion(-1.13041e-18, -0.19986, -5.54191e-18, 0.979824)
+bones/16/position = Vector3(0.0474574, -7.10543e-17, -8.88178e-18)
+bones/18/rotation = Quaternion(-0.00750833, 0.000781651, -0.267734, 0.963463)
+bones/19/rotation = Quaternion(-0.00723771, 0.00214514, -0.0865322, 0.99622)
+bones/20/rotation = Quaternion(-0.00749353, -0.000913904, -0.476033, 0.879395)
+bones/22/rotation = Quaternion(0.16311, 0.0532511, -0.053304, 0.983727)
+bones/23/rotation = Quaternion(0.0187155, 0.101117, 0.0264672, 0.994346)
+bones/24/rotation = Quaternion(0.327339, 0.560086, -0.657035, 0.384001)
+bones/25/position = Vector3(0.253465, -1.42109e-16, 3.55271e-17)
+bones/25/rotation = Quaternion(-3.44941e-19, -0.0870964, -8.36145e-17, 0.9962)
+bones/26/rotation = Quaternion(-1.29791e-19, -3.46702e-18, 0.9993, 0.0374097)
+bones/27/rotation = Quaternion(0, 0, -0.707107, 0.707107)
+bones/28/rotation = Quaternion(0.707107, -0.707107, -4.32978e-17, 4.32978e-17)
+bones/29/rotation = Quaternion(0.9993, -0.0374097, 1.15774e-17, 6.17086e-17)
+bones/30/rotation = Quaternion(0.380998, 0.517849, 0.645361, -0.412531)
+bones/31/rotation = Quaternion(0.505873, -0.862608, 4.07657e-17, -4.90464e-16)
+bones/32/rotation = Quaternion(0.650247, -0.75601, -0.0261016, 0.0703321)
+bones/34/rotation = Quaternion(-0.756699, 0.0672146, -0.0106805, 0.650211)
+bones/35/rotation = Quaternion(0.985395, -0.170282, -3.20991e-16, -3.42944e-16)
+bones/36/rotation = Quaternion(0.848274, -0.480364, 0.0511925, -0.216937)
+bones/38/rotation = Quaternion(0.308366, 0.632122, 0.603852, -0.375093)
+bones/39/rotation = Quaternion(0.189535, 0.681183, -0.689283, 0.15797)
+bones/40/rotation = Quaternion(0.436792, 0.279844, 0.790661, -0.3252)
+bones/41/rotation = Quaternion(-0.0651422, -0.239191, 0.955257, -0.161334)
+bones/42/rotation = Quaternion(0.883623, -0.299094, -0.235257, -0.272776)
+bones/43/rotation = Quaternion(0.946804, -0.205184, 0.054161, 0.241927)
+bones/44/position = Vector3(-0.155174, 0.249953, -0.144098)
+bones/44/rotation = Quaternion(0.613993, 0.316222, 0.497421, 0.524965)
+
+[node name="SwordAttachment" parent="Root Scene/RootNode/Skeleton3D" index="1"]
+transform = Transform3D(0.305152, -0.133941, 0.942837, 0.910573, -0.248832, -0.330059, 0.278816, 0.959241, 0.0460315, -0.155174, 0.249953, -0.144098)
+
+[node name="AnimationPlayer" parent="Root Scene" index="1"]
+libraries = {
+"Anim_Knight_AttackCombo01": ExtResource("2_3tqsq"),
+"Anim_Knight_Death01": ExtResource("3_hycvt"),
+"Anim_Knight_Idle01": ExtResource("4_7yp7q"),
+"Anim_Knight_Jump01": ExtResource("5_tfa6h"),
+"Anim_Knight_RunWithSword01": ExtResource("6_xwsbl"),
+"Anim_Knight_Wave01": ExtResource("7_4dmek")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.634288, 0)
+shape = SubResource("SphereShape3D_rn3dn")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.924892, 0.380231, 0, -0.380231, 0.924892, 0, 2.60678, 3.91585)
+attributes = SubResource("CameraAttributesPhysical_ifo0t")
+current = true
+
+[editable path="Root Scene"]

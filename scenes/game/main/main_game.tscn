@@ -1,0 +1,43 @@
+[gd_scene load_steps=9 format=3 uid="uid://ev62toly8lo7"]
+
+[ext_resource type="PackedScene" uid="uid://6cfa5rgkdgg8" path="res://scenes/hud/main/main_hud.tscn" id="1_ejsxj"]
+[ext_resource type="Script" path="res://scenes/game/main/main_game.gd" id="1_w4e8f"]
+[ext_resource type="PackedScene" uid="uid://b7udkgsnc7xti" path="res://resources/models/can/can_gltf/can.glb" id="2_qrwf0"]
+[ext_resource type="PackedScene" uid="uid://dyummnroo7lqo" path="res://resources/models/cheese/cheese_gltf/cheese_applied.glb" id="2_qtpm5"]
+[ext_resource type="PackedScene" uid="uid://b02h5ap3leqnn" path="res://resources/models/CVJ3/Table.glb" id="3_m8del"]
+[ext_resource type="PackedScene" uid="uid://6bbwr4qrdr57" path="res://scenes/menu/pause/pause_menu.tscn" id="3_xfh2t"]
+[ext_resource type="PackedScene" uid="uid://bwmid1r074xw" path="res://scenes/game/character/character.tscn" id="5_krkf7"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_lmhuk"]
+
+[node name="MainGame" type="Node3D"]
+script = ExtResource("1_w4e8f")
+
+[node name="MainHud" parent="." instance=ExtResource("1_ejsxj")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("3_xfh2t")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.722123, 0.691765, 0, -0.691765, 0.722123, -0.0943127, 4.69476, 6.87895)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_lmhuk")
+
+[node name="cheese_applied" parent="." instance=ExtResource("2_qtpm5")]
+transform = Transform3D(1, 0, 0, 0, 0.634717, -0.772745, 0, 0.772745, 0.634717, 0.3132, 1.47315, 3.25746)
+
+[node name="Table" parent="." instance=ExtResource("3_m8del")]
+transform = Transform3D(7.41983, 0, 0, 0, 1, 0, 0, 0, 1, 1.25793, 0, 3.2152)
+
+[node name="can2" parent="." instance=ExtResource("2_qrwf0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.629636, 1.24192, 3.93509)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.999999, -0.00117729, 0.000290722, 0.000908058, 0.885872, 0.463929, -0.000803724, -0.463928, 0.885872, 0, 3.97683, 8.11985)
+
+[node name="Character" parent="." instance=ExtResource("5_krkf7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.19644, 7.08773)
+
+[editable path="PauseMenu"]

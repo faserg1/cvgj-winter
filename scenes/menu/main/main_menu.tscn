@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=3 uid="uid://bveqtb73p2o1e"]
+
+[ext_resource type="Script" path="res://scenes/menu/main/main_menu.gd" id="1_mmutx"]
+[ext_resource type="Texture2D" uid="uid://de66a347y5ts8" path="res://resources/ui/super_nova.png" id="2_eeytu"]
+[ext_resource type="Texture2D" uid="uid://b6qs5hydy8ueq" path="res://resources/ui/rect128.png" id="2_gad33"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kmyt7"]
+texture = ExtResource("2_gad33")
+texture_margin_left = 32.0
+texture_margin_top = 32.0
+texture_margin_right = 32.0
+texture_margin_bottom = 32.0
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mmutx")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_eeytu")
+expand_mode = 3
+stretch_mode = 6
+
+[node name="RootMargin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxMenu" type="VBoxContainer" parent="RootMargin"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="NewGameBtn" type="Button" parent="RootMargin/VBoxMenu"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_kmyt7")
+text = "New Game"
+
+[node name="ExitBtn" type="Button" parent="RootMargin/VBoxMenu"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_kmyt7")
+text = "Exit"
+
+[connection signal="pressed" from="RootMargin/VBoxMenu/NewGameBtn" to="." method="_on_new_game_btn_pressed"]
+[connection signal="pressed" from="RootMargin/VBoxMenu/ExitBtn" to="." method="_on_exit_btn_pressed"]
