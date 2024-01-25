@@ -27,8 +27,26 @@ var camera_rotation: float = 0
 var rot_x = 0
 var rot_y = 0
 
+@onready var debug_velocity: MeshInstance3D = $DebugVelocity
+@onready var debug_gravity: MeshInstance3D = $DebugGravity
+
 func _process(delta):
-	pass
+	var mesh = debug_velocity.mesh as ImmediateMesh
+	var mesh2 = debug_gravity.mesh as ImmediateMesh
+	
+	mesh.clear_surfaces()
+	mesh.surface_begin(Mesh.PRIMITIVE_LINES)
+	mesh.surface_add_vertex(Vector3(0, 0, 0))
+	mesh.surface_add_vertex(velocity)
+	mesh.surface_end()
+	
+	var gravity = PhysicsServer3D.body_get_direct_state(get_rid()).total_gravity
+	
+	mesh2.clear_surfaces()
+	mesh2.surface_begin(Mesh.PRIMITIVE_LINES)
+	mesh2.surface_add_vertex(Vector3(0, 0, 0))
+	mesh2.surface_add_vertex(gravity)
+	mesh2.surface_end()
 
 func _physics_process(delta):
 	_handle_physics(delta)
@@ -42,13 +60,10 @@ func _handle_physics(delta: float):
 	
 	var jump_pressed = Input.is_action_just_pressed("jump")
 	
-	var rotation_angle = transform.basis.z.angle_to(up_direction)
-	var new_basis = Basis(transform.basis.z, rotation_angle)
-	transform.basis = new_basis
-	
 	# Add the gravity.
 	if not is_on_floor():
-		velocity = gravity * delta
+		velocity += gravity * delta
+		
 		if animation_player.current_animation != JUMP_LOOP_ANIMATION:
 			animation_player.current_animation = JUMP_LOOP_ANIMATION
 
@@ -65,11 +80,13 @@ func _handle_physics(delta: float):
 	
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
+		pass
+		#velocity.x = direction.x * SPEED
+		#velocity.z = direction.z * SPEED
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+		pass
+		#velocity.x = move_toward(velocity.x, 0, SPEED)
+		#velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
 

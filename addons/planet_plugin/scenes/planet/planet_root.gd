@@ -6,13 +6,12 @@ class_name PlanetRoot
 @onready var planet_mesh = $PlanetMesh
 @onready var gravity_shape = $AreaGravity/GravityShape
 @onready var area_gravity = $AreaGravity
-@onready var area_collision = $AreaCollision
-@onready var collision_shape = $AreaCollision/CollisionShape
+@onready var collision_shape = $Collision/CollisionShape
 
 @export var radius: float:
 	set(value):
 		radius = value
-		var everything = [planet_mesh, gravity_shape, area_gravity, area_collision, collision_shape]
+		var everything = [planet_mesh, gravity_shape, area_gravity, collision_shape]
 		if everything.any(func neg(x): return !x):
 			return
 		var insides = [planet_mesh.mesh, gravity_shape.shape, collision_shape.shape]
