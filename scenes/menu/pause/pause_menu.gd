@@ -16,11 +16,13 @@ func _input(event):
 func _toggle_pause():
 	control_root.visible = !control_root.visible
 	get_tree().paused = control_root.visible
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE if control_root.visible else Input.MOUSE_MODE_CAPTURED
 
 func _on_resume_pressed():
 	control_root.visible = false
 	get_tree().paused = false
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _on_exit_pressed():
-	get_tree().change_scene_to_file(MAIN_MENU_FILE)
 	get_viewport().set_input_as_handled()
+	get_tree().change_scene_to_file(MAIN_MENU_FILE)
