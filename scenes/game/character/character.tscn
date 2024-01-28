@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bwmid1r074xw"]
+[gd_scene load_steps=21 format=3 uid="uid://bwmid1r074xw"]
 
 [ext_resource type="Script" path="res://scenes/game/character/character.gd" id="1_664sg"]
 [ext_resource type="PackedScene" uid="uid://d0gcgmbi8abog" path="res://resources/models/LittleKnightCharacterPack/_Exports/SeperatedSword/Chr_Knight.tscn" id="1_d1sup"]
@@ -30,10 +30,37 @@ emission = Color(0.172549, 0.294118, 0.694118, 1)
 
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_ac2si"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_82nv3"]
+albedo_color = Color(0.172549, 0.627451, 0.160784, 1)
+emission_enabled = true
+emission = Color(0.172549, 0.627451, 0.160784, 1)
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_3lkau"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_317mc"]
+albedo_color = Color(0.960784, 0.192157, 0.8, 1)
+emission_enabled = true
+emission = Color(0.960784, 0.192157, 0.8, 1)
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_ebskm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8m46f"]
+albedo_color = Color(0.635294, 0.439216, 0.12549, 1)
+emission_enabled = true
+emission = Color(0.635294, 0.439216, 0.12549, 1)
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_lk32n"]
+
 [node name="Character" type="CharacterBody3D"]
 script = ExtResource("1_664sg")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.634288, 0)
+shape = SubResource("SphereShape3D_rn3dn")
+
+[node name="CollideArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="CollideArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.634288, 0)
 shape = SubResource("SphereShape3D_rn3dn")
 
@@ -105,13 +132,37 @@ attributes = SubResource("CameraAttributesPhysical_ifo0t")
 current = true
 
 [node name="DebugVelocity" type="MeshInstance3D" parent="."]
+top_level = true
 layers = 2
 material_override = SubResource("StandardMaterial3D_pl7d0")
 mesh = SubResource("ImmediateMesh_g4xl7")
 
 [node name="DebugGravity" type="MeshInstance3D" parent="."]
+top_level = true
 layers = 2
 material_override = SubResource("StandardMaterial3D_uw6ol")
 mesh = SubResource("ImmediateMesh_ac2si")
+
+[node name="DebugForward" type="MeshInstance3D" parent="."]
+top_level = true
+layers = 2
+material_override = SubResource("StandardMaterial3D_82nv3")
+mesh = SubResource("ImmediateMesh_3lkau")
+
+[node name="DebugUp" type="MeshInstance3D" parent="."]
+top_level = true
+layers = 2
+material_override = SubResource("StandardMaterial3D_317mc")
+mesh = SubResource("ImmediateMesh_ebskm")
+
+[node name="DebugRight" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00411892, 0, -0.00268519)
+top_level = true
+layers = 2
+material_override = SubResource("StandardMaterial3D_8m46f")
+mesh = SubResource("ImmediateMesh_lk32n")
+
+[connection signal="area_entered" from="CollideArea" to="." method="_on_collide_area_area_entered"]
+[connection signal="area_exited" from="CollideArea" to="." method="_on_collide_area_area_exited"]
 
 [editable path="Rotated/Root Scene"]

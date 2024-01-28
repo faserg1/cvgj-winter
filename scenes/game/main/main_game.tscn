@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bwmid1r074xw" path="res://scenes/game/character/character.tscn" id="5_krkf7"]
 [ext_resource type="PackedScene" uid="uid://b6xnet3ponv7" path="res://addons/planet_plugin/scenes/planet/planet_root.tscn" id="8_p0qm0"]
 
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_lmhuk"]
+[sub_resource type="BoxMesh" id="BoxMesh_633pm"]
 
 [node name="MainGame" type="Node3D"]
 script = ExtResource("1_w4e8f")
@@ -17,11 +17,6 @@ script = ExtResource("1_w4e8f")
 [node name="MainHud" parent="." instance=ExtResource("1_ejsxj")]
 
 [node name="PauseMenu" parent="." instance=ExtResource("3_xfh2t")]
-
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource("WorldBoundaryShape3D_lmhuk")
 
 [node name="cheese_applied" parent="." instance=ExtResource("2_qtpm5")]
 transform = Transform3D(1, 0, 0, 0, 0.634717, -0.772745, 0, 0.772745, 0.634717, 0.3132, 1.47315, 3.25746)
@@ -40,6 +35,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.19644, 7.08773)
 
 [node name="PlanetRoot" parent="." instance=ExtResource("8_p0qm0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.81281, 335.651, -559.984)
+
+[node name="temp_gavno" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.77155, -64.5194, -560.045)
+mesh = SubResource("BoxMesh_633pm")
 
 [editable path="PauseMenu"]
 [editable path="PlanetRoot"]
