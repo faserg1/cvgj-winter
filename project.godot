@@ -25,7 +25,7 @@ project/assembly_name="Cvgj-winter"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/planet_plugin/plugin.cfg")
+enabled=PackedStringArray("res://addons/icosphere/plugin.cfg", "res://addons/planet_plugin/plugin.cfg", "res://addons/vertex_painter/plugin.cfg")
 
 [importer_defaults]
 
@@ -95,3 +95,10 @@ jump={
 
 3d/default_gravity=0.0
 3d/default_gravity_vector=Vector3(0, 0, 0)
+
+[shader_globals]
+
+pisun={
+"type": "sampler2D",
+"value": ""
+}

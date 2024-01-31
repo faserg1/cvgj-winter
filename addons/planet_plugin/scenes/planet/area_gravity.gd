@@ -37,4 +37,5 @@ func get_front_gvec_from_gpoint(gtarget: Vector3):
 	var vec = Vector2(local_pos.x, local_pos.z).orthogonal().normalized()
 	var local_forward = Vector3(vec.x, 0, vec.y) + local_pos
 	vec_forward = local_forward
-	return to_global(local_forward)
+	var vec_up = vec_target * (radius + 1) / radius
+	return [to_global(local_forward), to_global(vec_up)]

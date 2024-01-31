@@ -37,52 +37,29 @@ var current_planet_area: AreaGravity
 var vec_forward = Vector3()
 var vec_right = Vector3()
 var vel_gravity = Vector3()
+var vec_up = Vector3()
+
+@onready var rotated = $Rotated
 
 func _process(delta):
-	var mesh = debug_velocity.mesh as ImmediateMesh
-	var mesh2 = debug_gravity.mesh as ImmediateMesh
-	var mesh3 = debug_forward.mesh as ImmediateMesh
-	var mesh4 = debug_up.mesh as ImmediateMesh
-	var mesh5 = debug_right.mesh as ImmediateMesh
 	
-	var current_basis = transform.basis
-	transform.basis = Basis.IDENTITY
+	var gravity = PhysicsServer3D.body_get_direct_state(get_rid()).total_gravity
 	
-	var gzero = to_global(Vector3(0, 0, 0))
+	_debug_draw_line(debug_velocity, velocity)
+	_debug_draw_line(debug_gravity, gravity)
+	_debug_draw_line(debug_forward, vec_forward)
+	_debug_draw_line(debug_up, up_direction)
+	_debug_draw_line(debug_right, vec_right)
+
+func _debug_draw_line(mesh_instance: MeshInstance3D, target: Vector3):
+	var mesh = mesh_instance.mesh as ImmediateMesh
+	var gzero = Vector3()
 	
 	mesh.clear_surfaces()
 	mesh.surface_begin(Mesh.PRIMITIVE_LINES)
 	mesh.surface_add_vertex(gzero)
-	mesh.surface_add_vertex(to_global(velocity))
+	mesh.surface_add_vertex((transform.basis * target) * 2)
 	mesh.surface_end()
-	
-	var gravity = PhysicsServer3D.body_get_direct_state(get_rid()).total_gravity
-	
-	mesh2.clear_surfaces()
-	mesh2.surface_begin(Mesh.PRIMITIVE_LINES)
-	mesh2.surface_add_vertex(gzero)
-	mesh2.surface_add_vertex(to_global(gravity))
-	mesh2.surface_end()
-	
-	mesh3.clear_surfaces()
-	mesh3.surface_begin(Mesh.PRIMITIVE_LINES)
-	mesh3.surface_add_vertex(gzero)
-	mesh3.surface_add_vertex(to_global(vec_forward))
-	mesh3.surface_end()
-	
-	mesh4.clear_surfaces()
-	mesh4.surface_begin(Mesh.PRIMITIVE_LINES)
-	mesh4.surface_add_vertex(gzero)
-	mesh4.surface_add_vertex(to_global(up_direction))
-	mesh4.surface_end()
-	
-	mesh5.clear_surfaces()
-	mesh5.surface_begin(Mesh.PRIMITIVE_LINES)
-	mesh5.surface_add_vertex(gzero)
-	mesh5.surface_add_vertex(to_global(vec_right))
-	mesh5.surface_end()
-	
-	transform.basis = current_basis
 
 func _physics_process(delta):
 	_handle_physics(delta)
@@ -96,12 +73,16 @@ func _handle_physics(delta: float):
 		
 	if current_planet_area:
 		var zero_global = to_global(Vector3())
-		var g_forward = current_planet_area.get_front_gvec_from_gpoint(zero_global)
-		vec_forward = to_local(g_forward).normalized()
+		var forward_and_up = current_planet_area.get_front_gvec_from_gpoint(zero_global)
+		var g_forward = forward_and_up[0]
+		var g_up = forward_and_up[1]
+		vec_up = to_local(g_up).normalized() * transform.basis
+		vec_forward = to_local(g_forward).normalized() * transform.basis
 		var plane = Plane(up_direction)
 		vec_forward = plane.project(vec_forward).normalized()
 		vec_right = vec_forward.cross(up_direction)
-		transform.basis = Basis(vec_forward, up_direction, vec_right)
+		
+		rotated.transform.basis = Basis(vec_forward, up_direction, vec_right.normalized())
 		
 	velocity = Vector3()
 	
@@ -127,9 +108,12 @@ func _handle_physics(delta: float):
 	else:
 		animation_player.current_animation = IDLE_ANIMATION
 	
-	var direction = (transform.basis * Vector3(-input_dir.y, 0, input_dir.x)).normalized()
+	#var direction = (transform.basis * Vector3(-input_dir.y, 0, input_dir.x)).normalized()
+	var direction = (Vector3(-input_dir.y, 0, input_dir.x)).normalized()
 	if direction:
-		pass
+		#var vecyplane = Vector3(cos(rot_x), 0, sin(rot_x)) * 2
+		#var up = transform.basis * Vector3(0, 1, 0)
+		#look_at(to_global(vecyplane), up)
 		velocity += direction * SPEED
 	else:
 		pass
