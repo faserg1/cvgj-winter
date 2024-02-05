@@ -46,7 +46,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.129, -69.4079)
 mesh = SubResource("BoxMesh_633pm")
 
 [node name="Flower" parent="." instance=ExtResource("9_cxl28")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 37.455, -53.5475)
+transform = Transform3D(1, 0, 0, 0, -0.407582, -0.913169, 0, 0.913169, -0.407582, 0, 37.455, -53.5475)
 
 [editable path="PauseMenu"]
 [editable path="PlanetRoot"]

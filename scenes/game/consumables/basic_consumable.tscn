@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://denkmpcnv770p"]
+
+[ext_resource type="Script" path="res://scenes/game/consumables/basic_consumable.gd" id="1_cyw2j"]
+
+[node name="BasicConsumable" type="Node3D"]
+script = ExtResource("1_cyw2j")

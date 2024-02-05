@@ -44,6 +44,8 @@ var calculated_basis: Basis = Basis()
 
 @onready var rotated = $Rotated
 
+var curent_consumable: BasicConsumable
+
 func _process(delta):
 	
 	var gravity = PhysicsServer3D.body_get_direct_state(get_rid()).total_gravity
@@ -149,6 +151,12 @@ func _input(event):
 	if event is InputEventMouseMotion:
 		_handle_mouse_motion(event)
 		
+func _unhandled_input(event: InputEvent):
+	if event.is_action_pressed("use"):
+		print("fe! fe!")
+		if curent_consumable:
+			curent_consumable.consume()
+
 func _handle_mouse_motion(event: InputEventMouseMotion):
 	rot_x += event.relative.x * LOOKAROUND_SPEED
 	rot_y += -event.relative.y * LOOKAROUND_SPEED
@@ -161,7 +169,19 @@ func _handle_mouse_motion(event: InputEventMouseMotion):
 func _on_collide_area_area_entered(area):
 	if area is AreaGravity:
 		current_planet_area = area
+	check_consumable(area)
 
 func _on_collide_area_area_exited(area):
 	if area is AreaGravity && area == current_planet_area:
 		current_planet_area = null
+	check_consumable(area)
+
+func check_consumable(area: Area3D, enter = true):
+	if !(area.get_parent_node_3d() is BasicConsumable):
+		return
+	print("meow")
+	if enter:
+		curent_consumable = area.get_parent_node_3d() as BasicConsumable
+	else:
+		curent_consumable = null
+	
