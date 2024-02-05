@@ -16,6 +16,7 @@ const JUMP_LOOP_ANIMATION = "Anim_Knight_Jump01/Anim_Knight_JumpLoop01"
 
 @onready var animation_player: AnimationPlayer = $"Rotated/Root Scene/AnimationPlayer"
 
+
 @export var camera_distance: float = 4
 
 var camera_height: float = 0
@@ -38,6 +39,8 @@ var vec_forward = Vector3()
 var vec_right = Vector3()
 var vel_gravity = Vector3()
 var vec_up = Vector3()
+
+var calculated_basis: Basis = Basis()
 
 @onready var rotated = $Rotated
 
@@ -82,8 +85,10 @@ func _handle_physics(delta: float):
 		vec_forward = plane.project(vec_forward).normalized()
 		vec_right = vec_forward.cross(up_direction)
 		
-		rotated.transform.basis = Basis(vec_forward, up_direction, vec_right.normalized())
-		
+		calculated_basis = Basis(vec_forward, up_direction, vec_right.normalized())
+	
+	rotated.transform.basis = calculated_basis
+	
 	velocity = Vector3()
 	
 	var jump_pressed = Input.is_action_just_pressed("jump")
@@ -101,6 +106,11 @@ func _handle_physics(delta: float):
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity = up_direction * JUMP_VELOCITY
 	
+	var speed_mul = 1
+	
+	if Input.is_action_just_pressed("boost") and is_on_floor():
+		speed_mul = 2
+	
 	var input_dir = Input.get_vector("left", "right", "forward", "back")
 	
 	if input_dir.length() > 0.1 and is_on_floor():
@@ -109,12 +119,12 @@ func _handle_physics(delta: float):
 		animation_player.current_animation = IDLE_ANIMATION
 	
 	#var direction = (transform.basis * Vector3(-input_dir.y, 0, input_dir.x)).normalized()
-	var direction = (Vector3(-input_dir.y, 0, input_dir.x)).normalized()
+	var direction = (calculated_basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
 		#var vecyplane = Vector3(cos(rot_x), 0, sin(rot_x)) * 2
 		#var up = transform.basis * Vector3(0, 1, 0)
 		#look_at(to_global(vecyplane), up)
-		velocity += direction * SPEED
+		velocity += direction * SPEED * speed_mul
 	else:
 		pass
 		velocity.x = move_toward(velocity.x, 0, SPEED)
@@ -142,9 +152,10 @@ func _input(event):
 func _handle_mouse_motion(event: InputEventMouseMotion):
 	rot_x += event.relative.x * LOOKAROUND_SPEED
 	rot_y += -event.relative.y * LOOKAROUND_SPEED
-	var vecyplane = Vector3(cos(rot_x)* camera_distance, 1.5, sin(rot_x) * camera_distance)
-	var up = transform.basis * Vector3(0, 1, 0)
-	camera_3d.look_at_from_position(to_global(vecyplane), canera_look_at.global_position, up)
+	rot_y = clamp(rot_y, -PI/16, PI/2)
+	var vecyplane = Vector3(cos(rot_x), sin(rot_y), sin(rot_x)) * camera_distance
+	var up = rotated.transform.basis * Vector3(0, 1, 0)
+	camera_3d.look_at_from_position(rotated.to_global(vecyplane), canera_look_at.global_position, up)
 
 
 func _on_collide_area_area_entered(area):

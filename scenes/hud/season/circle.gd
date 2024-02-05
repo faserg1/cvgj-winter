@@ -8,8 +8,6 @@ extends Node2D
 @export var sun_colors: Gradient
 @export var planet_color: Color
 
-@export var first_season: GlobalStateClass.Season
-
 @onready var turns_left = $TurnsLeft
 
 var planet_radians: float = 0
@@ -50,7 +48,7 @@ func check_for_season(animate = true, force = false):
 	var turn_count = GlobalState.turn_state.turn_count
 	if prev_turn == turn_now and not force:
 		return
-	var radians = (turn_now + first_season) * TAU / 4 + PLANET_SEASON_OFFSET
+	var radians = (turn_now + GlobalState.turn_state.first_season) * TAU / 4 + PLANET_SEASON_OFFSET
 	if animate:
 		var animation = get_tree().create_tween()
 		animation.tween_property(self, "planet_radians", radians, 0.5)\

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3wup7lco5tq3"]
+
+[ext_resource type="PackedScene" uid="uid://bqrqa41eclbfq" path="res://resources/models/CVJ1/Flower.glb" id="1_8d0n6"]
+[ext_resource type="Script" path="res://scenes/game/consumables/flower.gd" id="1_v357v"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oqdgk"]
+radius = 0.4
+height = 1.0
+
+[node name="Flower" type="Node3D"]
+script = ExtResource("1_v357v")
+
+[node name="Flower" parent="." instance=ExtResource("1_8d0n6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.974188, 0)
+
+[node name="AreaTouch" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.41331, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AreaTouch"]
+shape = SubResource("CapsuleShape3D_oqdgk")
+
+[editable path="Flower"]

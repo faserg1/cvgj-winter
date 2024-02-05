@@ -12,11 +12,8 @@ enum Season
 	FALL = 3
 }
 
-func next_turn():
-	turn_state.turn_current += 1
-
 #TODO: make sure to move that into controller
 func _unhandled_input(event: InputEvent):
 	if event.is_action_pressed("end_turn"):
-		next_turn()
+		turn_state.next_turn()
 		get_viewport().set_input_as_handled()
