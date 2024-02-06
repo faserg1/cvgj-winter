@@ -54,8 +54,11 @@ emission = Color(0.635294, 0.439216, 0.12549, 1)
 
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_lk32n"]
 
-[node name="Character" type="CharacterBody3D"]
+[node name="Character" type="CharacterBody3D" node_paths=PackedStringArray("camera_3d", "camera_spring_arm", "camera_root")]
 script = ExtResource("1_664sg")
+camera_3d = NodePath("CameraRoot/SpringArm3D/Camera3D")
+camera_spring_arm = NodePath("CameraRoot/SpringArm3D")
+camera_root = NodePath("CameraRoot")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_rn3dn")
@@ -66,10 +69,10 @@ shape = SubResource("SphereShape3D_rn3dn")
 shape = SubResource("SphereShape3D_rn3dn")
 
 [node name="Rotated" type="Node3D" parent="."]
-transform = Transform3D(0.157865, 0, -0.987461, 0, 1, 0, 0.987461, 0, 0.157865, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Root Scene" parent="Rotated" instance=ExtResource("1_d1sup")]
-transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, -0.716776, 0)
+transform = Transform3D(4.37114e-08, 0, 1, 0, 1, 0, -1, 0, 4.37114e-08, 0, -0.716776, 0)
 
 [node name="Skeleton3D" parent="Rotated/Root Scene/RootNode" index="0"]
 bones/1/position = Vector3(-0.00721023, 0.305548, -0.0312333)
@@ -127,8 +130,15 @@ libraries = {
 [node name="CaneraLookAt" type="Node3D" parent="Rotated"]
 transform = Transform3D(-1, 0, -5.96046e-08, 0, 1, 0, 5.96046e-08, 0, -1, 0, 0.185928, 0)
 
-[node name="Camera3D" type="Camera3D" parent="Rotated"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 1.49012e-08, 0, 1, -0.498602, 0, 3.1188)
+[node name="CameraRoot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraRoot"]
+transform = Transform3D(-4.37114e-08, 0.707107, -0.707107, 0, 0.707107, 0.707107, 1, 3.09086e-08, -3.09086e-08, 0, 0, 0)
+spring_length = 4.0
+
+[node name="Camera3D" type="Camera3D" parent="CameraRoot/SpringArm3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
 
 [node name="DebugVelocity" type="MeshInstance3D" parent="."]
 layers = 2

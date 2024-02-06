@@ -28,14 +28,3 @@ func _process(delta):
 	mesh2.surface_add_vertex(vec_forward)
 	mesh2.surface_end()
 	
-
-func get_front_gvec_from_gpoint(gtarget: Vector3):
-	var local_pos = to_local(gtarget)
-	vec_target = local_pos
-	var radius = (gravity_shape.shape as SphereShape3D).radius
-	
-	var vec = Vector2(local_pos.x, local_pos.z).orthogonal().normalized()
-	var local_forward = Vector3(vec.x, 0, vec.y) + local_pos
-	vec_forward = local_forward
-	var vec_up = vec_target * (radius + 1) / radius
-	return [to_global(local_forward), to_global(vec_up)]
