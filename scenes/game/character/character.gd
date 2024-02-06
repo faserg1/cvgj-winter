@@ -10,12 +10,8 @@ const IDLE_ANIMATION = "Anim_Knight_Idle01/Anim_Knight_Idle01"
 const JUMP_ANIMATION = "Anim_Knight_Jump01/Anim_Knight_Jump"
 const FALL_LOOP_ANIMATION = "Anim_Knight_Jump01/Anim_Knight_FallLoop01"
 const JUMP_LOOP_ANIMATION = "Anim_Knight_Jump01/Anim_Knight_JumpLoop01"
-#const JUMP_ANIMATION = "Anim_Knight_Jump01/Anim_Knight_Jump"
-#const JUMP_ANIMATION = "Anim_Knight_Jump01/Anim_Knight_Jump"
-#const JUMP_ANIMATION = "Anim_Knight_Jump01/Anim_Knight_Jump"
 
 @onready var animation_player: AnimationPlayer = $"Rotated/Root Scene/AnimationPlayer"
-
 
 @export var camera_distance: float = 4
 
@@ -45,6 +41,9 @@ var calculated_basis: Basis = Basis()
 @onready var rotated = $Rotated
 
 var curent_consumable: BasicConsumable
+
+@onready var inventory = $Inventory
+
 
 func _process(delta):
 	
@@ -120,12 +119,8 @@ func _handle_physics(delta: float):
 	else:
 		animation_player.current_animation = IDLE_ANIMATION
 	
-	#var direction = (transform.basis * Vector3(-input_dir.y, 0, input_dir.x)).normalized()
 	var direction = (calculated_basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
-		#var vecyplane = Vector3(cos(rot_x), 0, sin(rot_x)) * 2
-		#var up = transform.basis * Vector3(0, 1, 0)
-		#look_at(to_global(vecyplane), up)
 		velocity += direction * SPEED * speed_mul
 	else:
 		pass
@@ -153,7 +148,6 @@ func _input(event):
 		
 func _unhandled_input(event: InputEvent):
 	if event.is_action_pressed("use"):
-		print("fe! fe!")
 		if curent_consumable:
 			curent_consumable.consume()
 
@@ -164,7 +158,6 @@ func _handle_mouse_motion(event: InputEventMouseMotion):
 	var vecyplane = Vector3(cos(rot_x), sin(rot_y), sin(rot_x)) * camera_distance
 	var up = rotated.transform.basis * Vector3(0, 1, 0)
 	camera_3d.look_at_from_position(rotated.to_global(vecyplane), canera_look_at.global_position, up)
-
 
 func _on_collide_area_area_entered(area):
 	if area is AreaGravity:
@@ -179,9 +172,12 @@ func _on_collide_area_area_exited(area):
 func check_consumable(area: Area3D, enter = true):
 	if !(area.get_parent_node_3d() is BasicConsumable):
 		return
-	print("meow")
 	if enter:
 		curent_consumable = area.get_parent_node_3d() as BasicConsumable
+		curent_consumable.have_consumed.connect(on_consumed)
 	else:
+		curent_consumable.have_consumed.disconnect(on_consumed)
 		curent_consumable = null
-	
+
+func on_consumed(items: PackedStringArray):
+	inventory.add_items(items)

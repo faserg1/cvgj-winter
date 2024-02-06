@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bwmid1r074xw"]
+[gd_scene load_steps=21 format=3 uid="uid://bwmid1r074xw"]
 
 [ext_resource type="Script" path="res://scenes/game/character/character.gd" id="1_664sg"]
 [ext_resource type="PackedScene" uid="uid://d0gcgmbi8abog" path="res://resources/models/LittleKnightCharacterPack/_Exports/SeperatedSword/Chr_Knight.tscn" id="1_d1sup"]
@@ -8,6 +8,7 @@
 [ext_resource type="AnimationLibrary" uid="uid://cbig813b4gfnj" path="res://resources/models/LittleKnightCharacterPack/_Exports/SeperatedSword/Anim_Knight_Jump01.fbx" id="5_tfa6h"]
 [ext_resource type="AnimationLibrary" uid="uid://cfwmeevngocax" path="res://resources/models/LittleKnightCharacterPack/_Exports/SeperatedSword/Anim_Knight_RunWithSword01.fbx" id="6_xwsbl"]
 [ext_resource type="AnimationLibrary" uid="uid://cl8fquqkngwph" path="res://resources/models/LittleKnightCharacterPack/_Exports/SeperatedSword/Anim_Knight_Wave01.fbx" id="7_4dmek"]
+[ext_resource type="PackedScene" uid="uid://dlphwvfxkoj0d" path="res://scenes/game/character/inventory.tscn" id="9_u6mc1"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_rn3dn"]
 custom_solver_bias = 0.225
@@ -155,6 +156,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00411892, 0, -0.00268519)
 layers = 2
 material_override = SubResource("StandardMaterial3D_8m46f")
 mesh = SubResource("ImmediateMesh_lk32n")
+
+[node name="Inventory" parent="." instance=ExtResource("9_u6mc1")]
 
 [connection signal="area_entered" from="CollideArea" to="." method="_on_collide_area_area_entered"]
 [connection signal="area_exited" from="CollideArea" to="." method="_on_collide_area_area_exited"]
