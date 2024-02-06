@@ -47,6 +47,7 @@ var calculated_basis: Basis = Basis()
 @onready var rotated = $Rotated
 
 var curent_consumable: BasicConsumable
+@onready var inventory = $Inventory
 
 func _process(delta):
 	
@@ -112,7 +113,7 @@ func _handle_physics(delta: float):
 	
 	var target_horizontal_velocity = forward_direction*input_dir.y + right_direction*input_dir.x
 	target_horizontal_velocity *= SPEED*speed_mul
-	print(target_horizontal_velocity.length())
+	#print(target_horizontal_velocity.length())
 	horizontal_velocity = horizontal_velocity.move_toward(target_horizontal_velocity, ACCELERATION*delta)
 	velocity = vertical_velocity + horizontal_velocity
 	
@@ -159,8 +160,6 @@ func _handle_mouse_motion(event: InputEventMouseMotion):
 	rot.x = clamp(rot.x, -PI/2, PI/16)
 	camera_spring_arm.rotation = rot
 	
-
-
 func _on_collide_area_area_entered(area):
 	if area is AreaGravity:
 		current_planet_area = area
@@ -169,14 +168,19 @@ func _on_collide_area_area_entered(area):
 func _on_collide_area_area_exited(area):
 	if area is AreaGravity && area == current_planet_area:
 		current_planet_area = null
-	check_consumable(area)
+	check_consumable(area, false)
 
 func check_consumable(area: Area3D, enter = true):
 	if !(area.get_parent_node_3d() is BasicConsumable):
 		return
-	print("meow")
 	if enter:
+		print("enter consumable")
 		curent_consumable = area.get_parent_node_3d() as BasicConsumable
+		if !curent_consumable.have_consumed.is_connected(inventory.add_items):
+			curent_consumable.have_consumed.connect(inventory.add_items)
 	else:
+		print("exit consumable")
+		curent_consumable.have_consumed.disconnect(inventory.add_items)
 		curent_consumable = null
-	
+
+

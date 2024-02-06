@@ -6,7 +6,13 @@ extends Node2D
 
 @export var orbit_color: Color
 @export var sun_colors: Gradient
-@export var planet_color: Color
+
+var planet_color: Color
+
+@export var summer_color: Color
+@export var fall_color: Color
+@export var winter_color: Color
+@export var spring_color: Color
 
 @onready var turns_left = $TurnsLeft
 
@@ -51,14 +57,31 @@ func check_for_season(animate = true, force = false):
 	var radians = (turn_now + GlobalState.turn_state.first_season) * TAU / 4 + PLANET_SEASON_OFFSET
 	if animate:
 		var animation = get_tree().create_tween()
+		animation.set_parallel(true)
 		animation.tween_property(self, "planet_radians", radians, 0.5)\
+			.set_trans(Tween.TRANS_SINE)\
+			.set_ease(Tween.EASE_IN_OUT)
+		animation.tween_property(self, "planet_color", get_planet_color(), 0.5)\
 			.set_trans(Tween.TRANS_SINE)\
 			.set_ease(Tween.EASE_IN_OUT)
 	else:
 		planet_radians = radians
+		planet_color = get_planet_color()
 	prev_turn = turn_now
 
 func update_turn_left():
 	var turn_now = GlobalState.turn_state.turn_current
 	var turn_count = GlobalState.turn_state.turn_count
 	turns_left.text = String.num(turn_count - turn_now)
+
+func get_planet_color() -> Color:
+	match GlobalState.turn_state.get_season():
+		GlobalStateClass.Season.WINTER:
+			return winter_color
+		GlobalStateClass.Season.SPRING:
+			return spring_color
+		GlobalStateClass.Season.SUMMER:
+			return summer_color
+		GlobalStateClass.Season.FALL:
+			return fall_color
+	return planet_color

@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://tuxjhtuphn3n"]
+
+[ext_resource type="Script" path="res://scenes/game/walls/winter_barricade.gd" id="1_2vqnu"]
+[ext_resource type="PackedScene" uid="uid://c7n05ig1o5gtq" path="res://resources/models/CVJ1/tree_branches_only.glb" id="1_hr647"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ug25f"]
+size = Vector3(1, 1.38129, 2.83081)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qsel3"]
+size = Vector3(3.45374, 2.6048, 0.129761)
+
+[node name="WinterBarricade" type="StaticBody3D"]
+script = ExtResource("1_2vqnu")
+
+[node name="tree_branches_only" parent="." instance=ExtResource("1_hr647")]
+transform = Transform3D(0.747411, -0.148448, 0.128422, 0, 0.505578, 0.584417, -0.196289, -0.565249, 0.488995, 0.0930772, -0.296784, 0.527276)
+
+[node name="tree_branches_only2" parent="." instance=ExtResource("1_hr647")]
+transform = Transform3D(-0.772278, -0.0205487, 0.0177767, 0.0083832, 0.30071, 0.711797, -0.0258453, 0.71155, -0.300301, 0.0930772, -0.296784, -1.19131)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.190643, -0.326294)
+shape = SubResource("BoxShape3D_ug25f")
+
+[node name="FrontShapeWinter" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.880618, -2.07116e-08, -0.473827, -0.473827, -3.8493e-08, -0.880618, 0, 1, -4.37114e-08, 1.993, 0, -0.278)
+shape = SubResource("BoxShape3D_qsel3")
+
+[node name="BackShapeWinter" type="CollisionShape3D" parent="."]
+transform = Transform3D(-0.880477, -8.21983e-08, 0.474088, -0.474088, -2.07231e-08, -0.880477, 8.21983e-08, -1, -2.07231e-08, -1.993, 0, -0.278)
+shape = SubResource("BoxShape3D_qsel3")
+
+[node name="SnowVisuals" type="Node3D" parent="."]
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="SnowVisuals"]
+transform = Transform3D(0.920356, 0, 0, 0, -0.000408513, 0.750462, 0, -0.835948, -0.000366738, 0, -2.06891, 0)
+radius = 3.80706
+height = 3.72248
+sides = 16

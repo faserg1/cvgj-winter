@@ -3,7 +3,7 @@ extends Node3D
 class_name BasicConsumable
 
 signal try_consume()
-signal have_consumed()
+signal have_consumed(items: PackedStringArray)
 
 var consumed = false
 

@@ -1,5 +1,7 @@
 extends Node
 
+class_name TurnState
+
 signal turn_changed(turn: int)
 
 var turn_current = 0

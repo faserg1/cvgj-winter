@@ -2,7 +2,7 @@ extends Node
 
 class_name GlobalStateClass
 
-@onready var turn_state = $TurnState
+@onready var turn_state: TurnState = $TurnState
 
 enum Season
 {

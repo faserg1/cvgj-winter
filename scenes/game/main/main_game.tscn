@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ev62toly8lo7"]
+[gd_scene load_steps=12 format=3 uid="uid://ev62toly8lo7"]
 
 [ext_resource type="PackedScene" uid="uid://6cfa5rgkdgg8" path="res://scenes/hud/main/main_hud.tscn" id="1_ejsxj"]
 [ext_resource type="Script" path="res://scenes/game/main/main_game.gd" id="1_w4e8f"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bwmid1r074xw" path="res://scenes/game/character/character.tscn" id="5_krkf7"]
 [ext_resource type="PackedScene" uid="uid://b6xnet3ponv7" path="res://addons/planet_plugin/scenes/planet/planet_root.tscn" id="8_p0qm0"]
 [ext_resource type="PackedScene" uid="uid://b3wup7lco5tq3" path="res://scenes/game/consumables/flower.tscn" id="9_cxl28"]
+[ext_resource type="PackedScene" uid="uid://tuxjhtuphn3n" path="res://scenes/game/walls/winter_barricade.tscn" id="10_oyhb5"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_633pm"]
 
@@ -46,7 +47,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.129, -69.4079)
 mesh = SubResource("BoxMesh_633pm")
 
 [node name="Flower" parent="." instance=ExtResource("9_cxl28")]
-transform = Transform3D(1, 0, 0, 0, -0.407582, -0.913169, 0, 0.913169, -0.407582, 0, 37.455, -53.5475)
+transform = Transform3D(1, 0, 0, 0, -0.407582, -0.913169, 0, 0.913169, -0.407582, 0, 35.1409, -54.7559)
+
+[node name="WinterBarricade" parent="." instance=ExtResource("10_oyhb5")]
+transform = Transform3D(1.78487e-08, 3.99013e-08, 1, 0.912834, -0.40833, 0, 0.40833, 0.912834, -4.37114e-08, 0.0367565, 38.9815, -52.1625)
 
 [editable path="PauseMenu"]
 [editable path="PlanetRoot"]

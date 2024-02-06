@@ -19,7 +19,7 @@ func on_try_consume():
 	if GlobalState.turn_state.get_season() != GlobalStateClass.Season.SPRING:
 		return
 	consumed = true
-	have_consumed.emit()
+	have_consumed.emit(["petals"])
 	_on_turn_changed(GlobalState.turn_state.turn_current)
 
 func _on_turn_changed(_turn: int):

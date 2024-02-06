@@ -20,7 +20,10 @@ min_radius = 50.0
 planet_radius = 20.0
 orbit_color = Color(0.25098, 0.227451, 0.639216, 1)
 sun_colors = SubResource("Gradient_a2jk0")
-planet_color = Color(0, 0.741176, 0, 1)
+summer_color = Color(0.92549, 0.796078, 0.188235, 1)
+fall_color = Color(0.878431, 0.368627, 0, 1)
+winter_color = Color(0.145098, 0.780392, 0.847059, 1)
+spring_color = Color(0.921569, 0.360784, 0.952941, 1)
 
 [node name="TurnsLeft" type="Label" parent="Circle"]
 material = SubResource("ShaderMaterial_k507d")
